@@ -1,11 +1,13 @@
 //your JS code here. If required.
-function remove(){
-    const select = document.querySelector("#colorSelect");
-    let selectedvalue = select.value;
-    let options = select.children;
-    for(let i=0;i<options.length;i++){
-        options[i].value === selectedvalue;
-        options[i].remove();
-        return;
+const button = document.querySelector("input");
+
+let colorselect = document.querySelector("#colorSelect");
+button.addEventListener("click",()=>{
+    let selected = colorselect.value;
+    for(let i=0;i<colorselect.options.length;i++){
+        if(colorselect.options[i].value === selected){
+            colorselect.remove(i);
+            return;
+        }
     }
-}
+})
