@@ -1,12 +1,9 @@
-const button = document.querySelector("input");
-const colorSelect = document.querySelector("#colorSelect");
+const deleteButton = document.querySelector("#delete");
 
-button.addEventListener("click", () => {
-    const selectedValue = colorSelect.value;
-    for (let i = 0; i < colorSelect.options.length; i++) {
-        if (colorSelect.options[i].value === selectedValue) {
-            colorSelect.options[i].remove();
-            return;
-        }
-    }
-});
+deleteButton.addEventListener("click", ()=>{
+	const dropDown = document.getElementById("colorSelect");
+	const selected = dropDown.options[dropDown.selectedIndex];
+	if(selected){
+		dropDown.removeChild(selected);
+	}
+})
